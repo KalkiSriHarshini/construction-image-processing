@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Site Progress Monitor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #7d7da8;
+            background-image: url("C:\\Users\\kalki\\OneDrive\\Pictures\\Screenshots\\Screenshot 2025-01-06 150917.png"); /* Replace with the path to your image */
+            background-size: cover;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .container h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        .file-input {
+            margin: 10px 0;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        label {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        label:hover {
+            background-color: #0056b3;
+        }
+        .upload-message {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #28a745;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .preview-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 20px;
+        }
+        .preview-container img {
+            max-width: 200px;
+            max-height: 200px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Construction Site Images</h1>
+        <form id="upload-form">
+            <div class="file-input">
+                <input type="file" id="image1" accept="image/*" onchange="previewImage(event, 'preview1')">
+                <label for="image1">Choose First Image</label>
+            </div>
+            <div class="file-input">
+                <input type="file" id="image2" accept="image/*" onchange="previewImage(event, 'preview2')">
+                <label for="image2">Choose Second Image</label>
+            </div>
+            <button type="button" onclick="uploadImages()">Upload Images</button>
+        </form>
+        <p class="upload-message" id="upload-message"></p>
+        <div class="preview-container">
+            <img id="preview1" src="" alt="First Image Preview" style="display: none;">
+            <img id="preview2" src="" alt="Second Image Preview" style="display: none;">
+        </div>
+        <div class="upload">
+            <a href="output.html"></a> 
+        </div>
+    </div>
+
+    <script>
+        function previewImage(event, previewId) {
+            const file = event.target.files[0];
+            const preview = document.getElementById(previewId);
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function uploadImages() {
+            const image1 = document.getElementById('image1').files[0];
+            const image2 = document.getElementById('image2').files[0];
+            const messageElement = document.getElementById('upload-message');
+
+            if (!image1 || !image2) {
+                messageElement.textContent = 'Please select both images before uploading.';
+                messageElement.style.color = 'red';
+                return;
+            }
+
+            // Simulate upload process
+            messageElement.textContent = 'Images uploaded successfully! Monitoring progress...';
+            messageElement.style.color = '#28a745';
+        }
+    </script>
+</body>
+</html>

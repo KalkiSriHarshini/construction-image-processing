@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Construction Process Monitoring</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .dashboard {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: #343a40;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebar img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: block;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+        }
+
+        .sidebar li {
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar .icon {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 2rem;
+            background: #f8f9fa;
+        }
+
+        .content h1 {
+            margin: 0 0 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <!-- Aside Image -->
+            <img src="C:\Users\kalki\OneDrive\Documents\user.jpg" alt="User Profile">
+
+            <!-- Sidebar Menu -->
+            <ul>
+                <li><span class="icon">📊</span> <a href="output.html">Project Dashboard</a></li>
+                <li><span class="icon">🏠</span> <a href="home.html">Home</a></li>
+                <li><span class="icon">❓</span> <a href="help.html">Help</a></li>
+                <li><span class="icon">📤</span> <a href="upload.html">Upload</a></li>
+                <li><span class="icon">📈</span> <a href="track.html">Tracking Progress</a></li>
+                <li><span class="icon">📞</span> <a href="contact.html">Contact Us</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <h1>Welcome to Building Construction Process Monitoring</h1>
+            <p>Track, manage, and analyze construction progress in real-time.</p>
+        </main>
+    </div>
+</body>
+</html>

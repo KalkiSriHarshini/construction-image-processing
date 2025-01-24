@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Monitor Signup</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            background-image: url("C:\\Users\\kalki\\OneDrive\\Pictures\\Screenshots\\Screenshot 2025-01-06 150917.png"); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #510606; /* Changed to a darker color */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(252, 246, 246, 0.57); /* Changed background color */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+        }
+
+        .content {
+            padding: 20px;
+            display: flex; 
+            justify-content: space-between; 
+        }
+
+        .content-left {
+            width: 40%; 
+        }
+
+        .content-right {
+            width: 60%;
+        }
+
+        h1, h2 {
+            margin-bottom: 10px; 
+        } 
+
+        form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .stats {
+            margin-top: 20px;
+        }
+
+        #successMessage {
+            color: green;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Tools</a></li>
+                <li><a href="#">Data</a></li>
+                <li><a href="contact.html">Support</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <div class="content">
+            <div class="content-left">
+                <h1>Construction Monitor</h1>
+                <h2>The Ultimate Lead Source</h2>
+                <p>Construction Monitor is the top source for timely, accurate, and complete building and solar permit information in the United States. Our construction leads include key project data to help suppliers, subcontractors, building professionals, and general contractors to better target and reach new customers.</p>
+            </div>
+            <div class="content-right">
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="company">Company Name:</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Business Phone:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="area">Please Select Area:</label>
+                        <select id="area" name="area" required>
+                            <option value="">Select an area</option>
+                            {/* Add area options here */}
+                        </select>
+                    </div>
+                    <button type="submit">create</button>
+                </form>
+
+                <p>Or <a href="login.html">have an account?</a></p>
+
+                <div class="stats">
+                    <p>This Week: 47,581</p>
+                    <p>Last 12 Months: 3,098,163</p>
+                    <p>Total Permits: 28,157,987</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Basic form validation (you can add more checks)
+            const company = document.getElementById('company').value;
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const area = document.getElementById('area').value;
+
+            if (!company || !firstName || !lastName || !email || !phone || !area) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            // Simulate form submission (replace with actual server-side logic)
+            // You would typically send the form data to your server here
+            document.getElementById('successMessage').style.display = 'block'; 
+
+            // Optionally, reset the form
+            // this.reset();
+        });
+    </script>
+
+</body>
+</html>

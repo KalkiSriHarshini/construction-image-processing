@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Monitoring</title>
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+<body>
+    <header>
+        </header>
+
+    <div class="login">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="user-role">Select Role</label>
+                <select id="user-role" class="custom-list-box" required>
+                    <option value="admin">Admin</option>
+                    <option value="engineer">engineer</option>
+                    <option value="worker">Worker</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <button type="button" class="login-btn">Login</button>
+
+            <p style="text-align: center;">------ or ------</p>
+            <div class="sing-up">
+                </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginButton = document.querySelector('.login-btn'); 
+
+            loginButton.addEventListener('click', () => {
+                document.addEventListener('DOMContentLoaded', () => {
+  const loginForm = document.getElementById('loginForm');
+  const emailInput = document.getElementById('email');
+  const passwordInput = document.getElementById('password');
+  const loginButton = document.querySelector('.login-btn');
+  const errorMessage = document.createElement('p'); 
+  errorMessage.classList.add('error-message'); 
+  errorMessage.style.color = 'red';
+
+  loginForm.appendChild(errorMessage);
+
+  loginButton.addEventListener('click', (event) => {
+    event.preventDefault(); 
+
+    const email = emailInput.value;
+    const password = passwordInput.value;
+
+    // Basic validation (you should add more robust validation)
+    if (!email || !password) {
+      errorMessage.textContent = "Please enter both email and password.";
+      return;
+    }
+
+    // Simulate API call (replace with your actual API call)
+    fetch('/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    })
+      .then(response => {
+        if (response.ok) {
+          // Successful login
+          errorMessage.textContent = ""; // Clear any previous error messages
+          // Redirect to the homepage
+          window.location.href = "home3.html";
+        } else {
+          // Handle login error
+          errorMessage.textContent = "Invalid email or password."; 
+        }
+      })
+      .catch(error => {
+        console.error('Login error:', error);
+        errorMessage.textContent = "An error occurred during login. Please try again later.";
+      });
+  });
+});
+                window.location.href = "home3.html"; 
+            });
+        });
+    </script>
+</body>
+</html>

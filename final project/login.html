@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Monitoring</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-image: url("C:\\Users\\kalki\\OneDrive\\Pictures\\Screenshots\\Screenshot 2025-01-06 150917.png"); /* Replace with the path to your image */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        header .description {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .login {
+            background: rgba(0, 0, 0, 0.7);
+            width: 90%;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .login h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .login-btn:hover {
+            background: #0056b3;
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .forgot-password a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .forgot-password a:hover {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="heading">Monitor the Progress of Your Construction</h1>
+        <div class="description">
+            This platform allows you to monitor the progress of your construction site without visiting the actual location. <strong>"Upload a pic and know the progress".</strong>
+        </div>
+    </header>
+
+    <div class="login">
+        <h1>Login</h1>
+        <form action="home.html" method="GET">
+
+        <form>
+            <div class="form-group">
+                <form action="upload.html" method="get"></form>
+                <label for="user-role">Select Role</label>
+                <select id="user-role" class="custom-list-box" required>
+                    <option value="admin">Admin</option>
+                    <option value="engineer">engineer</option>
+                    <option value="worker">Worker</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            
+            <button type="button" onclick="login()">Login</button>
+
+            <p style="text-align: center;">------ or ------</p>
+            <div class="sing-up">
+                <p>Don't have an account? <a href="creat account.html">Sign Up</a></p>
+                <div class="forget password">
+                    <a href="forget password.html">Forgot Password?</a> 
+                </div>
+                <script>
+                    // JavaScript function to handle the login
+                    function login() {
+                        // Here you can add additional login logic, like validating username/password, etc.
+                        // For now, just redirect to the homepage upon clicking the button.
+    
+                        window.location.href = "side.html"; // Replace "home.html" with the actual homepage URL
+                    }
+                </script>
+                <!-- <script> -->
+                    <!-- // Handle form submission (optional) -->
+                    <!-- document.getElementById('loginForm').addEventListener('submit', function(event) { -->
+                        <!-- event.preventDefault(); -->
+                        <!-- // Perform login logic here -->
+                    <!-- }); -->
+                </script>
+                <script>
+                    const forgotPasswordForm = document.getElementById('forgotPasswordForm');
+                    const emailInput = document.getElementById('email');
+                    const statusMessage = document.getElementById('statusMessage');
+
+                    forgotPasswordForm.addEventListener('submit', (event) => {
+                            event.preventDefault(); // Prevent default form submission
+
+                                const email = emailInput.value;
+
+  // Validate email
+  if (!isValidEmail(email)) {
+    statusMessage.textContent = "Please enter a valid email address.";
+    statusMessage.classList.remove('hidden');
+    return;
+  }
+
+  // Send email request (replace with your actual email sending logic)
+  // Example:
+  // fetch('/send_reset_email', {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json'
+  //   },
+  //   body: JSON.stringify({ email: email })
+  // })
+  // .then(response => {
+  //   if (response.ok) {
+  //     statusMessage.textContent = "A password reset link has been sent to your email.";
+  //     statusMessage.classList.remove('hidden');
+  //   } else {
+  //     statusMessage.textContent = "An error occurred. Please try again later.";
+  //     statusMessage.classList.remove('hidden');
+  //   }
+  // })
+  // .catch(error => {
+  //   console.error('Error sending email:', error);
+  //   statusMessage.textContent = "An error occurred. Please try again later.";
+  //   statusMessage.classList.remove('hidden');
+  // });
+
+});
+
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+                </script>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
